@@ -4,14 +4,56 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ea1837-5053-4f4d-8967-44a4db0e3a0b" name="Changes" comment="" />
+    <list default="true" id="c4ea1837-5053-4f4d-8967-44a4db0e3a0b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ChangeUserCredentialsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CreateCustomerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CreateOrderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/GetOrdersTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/LogInCustomerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/request/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/request/CustomerClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/request/CustomerCredentials.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/request/CustomerGeneration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/request/IngredientsRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/request/OrderClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/request/OrderGeneration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/request/RestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/response/CreateCustomerResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/response/CreateOrderResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/response/GetOrdersResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/response/IngredientsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/response/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/response/Orders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/response/Owner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/response/RefreshCustomer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/response/ResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/response/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2EQoaOUl4HueZUKm6pEDxg8K1qv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -21,12 +63,77 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean test" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.ChangeUserCredentialsTest">
+    <configuration name="ChangeUserCredentialsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ChangeUserCredentialsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChangeUserCredentialsTest.checkChangeCredentialsRegisteredCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ChangeUserCredentialsTest" />
+      <option name="METHOD_NAME" value="checkChangeCredentialsRegisteredCustomer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChangeUserCredentialsTest.checkChangeCredentialsRegisteredCustomerWithExistedEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ChangeUserCredentialsTest" />
+      <option name="METHOD_NAME" value="checkChangeCredentialsRegisteredCustomerWithExistedEmail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChangeUserCredentialsTest.checkChangeCredentialsUnregisteredCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ChangeUserCredentialsTest" />
+      <option name="METHOD_NAME" value="checkChangeCredentialsUnregisteredCustomer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CreateCustomerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ChangeUserCredentialsTest" />
+        <item itemvalue="JUnit.ChangeUserCredentialsTest.checkChangeCredentialsRegisteredCustomer" />
+        <item itemvalue="JUnit.ChangeUserCredentialsTest.checkChangeCredentialsRegisteredCustomerWithExistedEmail" />
+        <item itemvalue="JUnit.ChangeUserCredentialsTest.checkChangeCredentialsUnregisteredCustomer" />
+        <item itemvalue="JUnit.CreateCustomerTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -37,5 +144,16 @@
       <updated>1662537233432</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
