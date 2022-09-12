@@ -47,7 +47,6 @@ public class ChangeUserCredentialsTest {
     }
     @Step("Send PATH request to api/auth/user")
     public ValidatableResponse changeCredentialsRegisteredCustomer() {
-        System.out.println(accessToken);
         ValidatableResponse response = customerClient.change(customerChange, accessToken);
         return response;
     }
@@ -84,55 +83,47 @@ public class ChangeUserCredentialsTest {
     @Step("Assert status code is 401")
     public void compareStatusCodeTo401(ValidatableResponse response){
         int actualStatusCode = response.extract().statusCode();
-        System.out.println(actualStatusCode);
         Assert.assertEquals(SC_UNAUTHORIZED, actualStatusCode);
     }
     @Step("Assert status code is 403")
     public void compareStatusCodeTo403(ValidatableResponse response){
         int actualStatusCode = response.extract().statusCode();
-        System.out.println(actualStatusCode);
         Assert.assertEquals(SC_FORBIDDEN, actualStatusCode);
     }
 
     @Step("Assert successful message")
     public void compareMessageToSuccessfulMessage(RefreshCustomer refreshCustomerResponse, ResponseMessage responseMessage){
         boolean actualMessage = refreshCustomerResponse.isSuccess();
-        System.out.println(actualMessage);
         Assert.assertEquals(responseMessage.isMessageSuccessCreateCustomer(), actualMessage);
     }
 
     @Step("Assert 401 error message Unauthorized")
     public void compareMessageToError401Unauthorized(ValidatableResponse response, ResponseMessage responseMessage){
         String actualMessage = response.extract().path("message");
-        System.out.println(actualMessage);
         Assert.assertEquals(responseMessage.getMessageError401Unauthorized(), actualMessage);
     }
 
     @Step("Assert 403 error message Forbidden")
     public void compareMessageToError403Forbidden(ValidatableResponse response, ResponseMessage responseMessage){
         String actualMessage = response.extract().path("message");
-        System.out.println(actualMessage);
         Assert.assertEquals(responseMessage.getMessageError403CustomerWithRepeatPassword(), actualMessage);
     }
 
     @Step("Assert unsuccessful message")
     public void compareMessageToUnsuccessfulMessage(ValidatableResponse response, ResponseMessage responseMessage){
         boolean actualMessage = response.extract().path("success");
-        System.out.println(actualMessage);
         Assert.assertEquals(responseMessage.isMessageUnsuccessfulCreateCustomer(), actualMessage);
     }
 
     @Step("Check String name is not empty")
     public void checkNameIsCustomerName(RefreshCustomer refreshCustomerResponse){
         String actualName = refreshCustomerResponse.getUser().getName();
-        System.out.println(actualName);
         Assert.assertEquals(customerChange.getName(), actualName);
     }
 
     @Step("Check String email is not empty")
     public void checkEmailIsCustomerName(RefreshCustomer refreshCustomerResponse){
         String actualEmail = refreshCustomerResponse.getUser().getEmail();
-        System.out.println(actualEmail);
         Assert.assertEquals(customerChange.getEmail(), actualEmail);
     }
 
@@ -143,7 +134,7 @@ public class ChangeUserCredentialsTest {
         ValidatableResponse loginResponse = logInCustomer();
         CreateCustomerResponse createLogInCustomerResponse = sendResponseInLogInCustomerResponseClass(loginResponse);
         getAccessTokenCustomer(createLogInCustomerResponse);
-        System.out.println(accessToken);
+
 
         ValidatableResponse response = changeCredentialsRegisteredCustomer();
         RefreshCustomer refreshCustomerResponse = sendResponseChangeCustomerResponseClass(response);
@@ -189,7 +180,7 @@ public class ChangeUserCredentialsTest {
         ValidatableResponse loginResponse = logInCustomer();
         CreateCustomerResponse createLogInCustomerResponse = sendResponseInLogInCustomerResponseClass(loginResponse);
         getAccessTokenCustomer(createLogInCustomerResponse);
-        System.out.println(accessToken);
+
 
         //изменяем данные, где почта будет совпадать с уже созданным чуваком
         ValidatableResponse response = changeCredentialsRegisteredCustomer();

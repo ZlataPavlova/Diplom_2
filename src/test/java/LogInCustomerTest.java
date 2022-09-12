@@ -75,28 +75,24 @@ public class LogInCustomerTest {
     @Step("Assert status code is 401")
     public void compareStatusCodeTo401(ValidatableResponse response){
         int actualStatusCode = response.extract().statusCode();
-        System.out.println(actualStatusCode);
         Assert.assertEquals(SC_UNAUTHORIZED, actualStatusCode);
     }
 
     @Step("Assert successful message")
     public void compareMessageToSuccessfulMessage(CreateCustomerResponse createLogInCustomerResponse, ResponseMessage responseMessage){
         boolean actualMessage = createLogInCustomerResponse.isSuccess();
-        System.out.println(actualMessage);
         Assert.assertEquals(responseMessage.isMessageSuccessCreateCustomer(), actualMessage);
     }
 
     @Step("Assert 401 error message Unauthorized")
     public void compareMessageToError401Unauthorized(ValidatableResponse response, ResponseMessage responseMessage){
         String actualMessage = response.extract().path("message");
-        System.out.println(actualMessage);
         Assert.assertEquals(responseMessage.getMessageError401IncorrectEmailOrPassword(), actualMessage);
     }
 
     @Step("Check String AccessToken is not empty")
     public void checkAccessTokenIsNotEmpty(CreateCustomerResponse createLogInCustomerResponse){
         String actualAccessToken = createLogInCustomerResponse.getAccessToken();
-        System.out.println(actualAccessToken);
         Assert.assertEquals( false, actualAccessToken.isEmpty());
     }
 

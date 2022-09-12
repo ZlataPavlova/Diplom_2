@@ -81,14 +81,12 @@ public class GetOrdersTest {
     @Step("Assert unsuccessful message")
     public void compareMessageToUnsuccessfulMessage(ValidatableResponse response, ResponseMessage responseMessage){
         boolean actualMessage = response.extract().path("success");
-        System.out.println(actualMessage);
         Assert.assertEquals(responseMessage.isMessageUnsuccessfulCreateCustomer(), actualMessage);
     }
 
     @Step("Assert 401 error message Unauthorized")
     public void compareMessageToError401Unauthorized(ValidatableResponse response, ResponseMessage responseMessage){
         String actualMessage = response.extract().path("message");
-        System.out.println(actualMessage);
         Assert.assertEquals(responseMessage.getMessageError401Unauthorized(), actualMessage);
     }
 
@@ -100,7 +98,6 @@ public class GetOrdersTest {
     @Step("Assert status code is 401")
     public void compareStatusCodeTo401(ValidatableResponse response){
         int actualStatusCode = response.extract().statusCode();
-        System.out.println(actualStatusCode);
         Assert.assertEquals(SC_UNAUTHORIZED, actualStatusCode);
     }
 
@@ -124,7 +121,6 @@ public class GetOrdersTest {
     @Step("Check String id is not empty in orders")
     public void checkOrdersIsNotEmpty(GetOrdersResponse getOrdersResponse){
         String actualOrders = getOrdersResponse.getOrders().toString();
-        System.out.println(actualOrders);
         Assert.assertEquals( false, actualOrders.isEmpty());
     }
 
@@ -156,7 +152,7 @@ public class GetOrdersTest {
         getAccessTokenCustomer(createLogInCustomerResponse);
 
         //создать заказ для пользователя
-       // ValidatableResponse createOrderResponse = createOrder();
+        ValidatableResponse createOrderResponse = createOrder();
 
 
         //отправка запроса на заказы для созданного пользователя

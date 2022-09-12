@@ -17,7 +17,6 @@ public class OrderClient extends RestClient {
                 .spec(getBaseSpec())
                 .auth().oauth2(accessToken)
                 .body(ingredientsRequest)
-                .log().all()
                 .when()
                 .post(ORDER_POST)
                 .then();
@@ -29,8 +28,7 @@ public class OrderClient extends RestClient {
                 .auth().oauth2(accessToken)
                 .when()
                 .get(ORDER_GET)
-                .then()
-                .log().all();
+                .then();
     }
 
 }

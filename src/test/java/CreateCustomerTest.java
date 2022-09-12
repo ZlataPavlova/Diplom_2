@@ -32,6 +32,12 @@ private String accessToken;
         responseMessage = new ResponseMessage();
   }
 
+    @After
+    public void tearDown(){
+
+        customerClient.delete(accessToken);
+
+    }
   @Step("Send POST request to api/auth/register")
     public ValidatableResponse checkCreateCorrectCustomer() {
         ValidatableResponse response = customerClient.create(customer);
@@ -129,13 +135,13 @@ private String accessToken;
         CreateCustomerResponse createCustomerResponse = sendResponseInCreateCustomerResponseClass(response);
         compareStatusCodeTo200(response);
         compareMessageToSuccessfulMessage(createCustomerResponse, responseMessage);
-        //System.out.println(createCustomerResponse.getAccessToken());
+
         checkAccessTokenIsNotEmpty(createCustomerResponse);
         checkRefreshTokenIsNotEmpty(createCustomerResponse);
         checkNameIsCustomerName(createCustomerResponse);
         checkEmailIsCustomerName(createCustomerResponse);
         getAccessTokenCustomer(createCustomerResponse);
-        customerClient.delete(accessToken);
+        //customerClient.delete(accessToken);
     }
 
     @Test
@@ -148,7 +154,7 @@ private String accessToken;
         compareStatusCodeTo403(responseDoubleCustomer);
         compareMessageToError403DoubleCustomer(responseDoubleCustomer, responseMessage);
         getAccessTokenCustomer(createCustomerResponse);
-        customerClient.delete(accessToken);
+
 
     }
 
@@ -158,7 +164,7 @@ private String accessToken;
         ValidatableResponse response = checkCreateCustomerWithFieldEmailEmpty();
         compareStatusCodeTo403(response);
         compareMessageToError403CustomerWithEmptyField(response, responseMessage);
-
+        accessToken="";
     }
 
     @Test
@@ -167,7 +173,7 @@ private String accessToken;
         ValidatableResponse response = checkCreateCustomerWithFieldPasswordEmpty();
         compareStatusCodeTo403(response);
         compareMessageToError403CustomerWithEmptyField(response, responseMessage);
-
+        accessToken="";
     }
 
     @Test
@@ -176,7 +182,7 @@ private String accessToken;
         ValidatableResponse response = checkCreateCustomerWithFieldNameEmpty();
         compareStatusCodeTo403(response);
         compareMessageToError403CustomerWithEmptyField(response, responseMessage);
-
+        accessToken="";
     }
 
 }
