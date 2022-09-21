@@ -15,11 +15,11 @@ public class CustomerCredentials {
         return new CustomerCredentials(customer.getEmail(), customer.getPassword(), customer.getName());
     }
 
-    public static CustomerCredentials getWrongInFieldPassword (Customer customer){
+    public static CustomerCredentials getWrongInFieldPassword(Customer customer) {
         return new CustomerCredentials(customer.getEmail(), customer.getwrongPassword(), customer.getName());
     }
 
-    public static CustomerCredentials getWrongInFieldEmail (Customer customer){
+    public static CustomerCredentials getWrongInFieldEmail(Customer customer) {
         return new CustomerCredentials(customer.getwrongEmail(), customer.getPassword(), customer.getName());
     }
 

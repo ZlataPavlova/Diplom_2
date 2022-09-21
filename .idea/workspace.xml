@@ -4,33 +4,65 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4ea1837-5053-4f4d-8967-44a4db0e3a0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ChangeUserCredentialsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CreateCustomerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CreateOrderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/GetOrdersTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/LogInCustomerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/request/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/request/CustomerClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/request/CustomerCredentials.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/request/CustomerGeneration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/request/IngredientsRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/request/OrderClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/request/OrderGeneration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/request/RestClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/response/CreateCustomerResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/response/CreateOrderResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/response/GetOrdersResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/response/IngredientsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/response/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/response/Orders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/response/Owner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/response/RefreshCustomer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/response/ResponseMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/response/User.java" afterDir="false" />
+    <list default="true" id="c4ea1837-5053-4f4d-8967-44a4db0e3a0b" name="Changes" comment="tests for api">
+      <change afterPath="$PROJECT_DIR$/src/main/java/steps/StepForChangeUserCredentialsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/steps/StepForCreateCustomerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/steps/StepForGetOrdersTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/steps/StepsForCreateOrderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/steps/StepsForLogInCustomerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ChangeUserCredentialsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ChangeUserCredentialsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateCustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateCustomerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateOrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GetOrdersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GetOrdersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LogInCustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LogInCustomerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/request/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/request/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/request/CustomerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/request/CustomerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/request/CustomerCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/request/CustomerCredentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/request/CustomerGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/request/CustomerGeneration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/request/IngredientsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/request/IngredientsRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/request/OrderClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/request/OrderClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/request/OrderGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/request/OrderGeneration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/request/RestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/request/RestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/response/CreateCustomerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/CreateCustomerResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/response/CreateOrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/CreateOrderResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/response/GetOrdersResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/GetOrdersResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/response/IngredientsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/IngredientsResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/response/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/response/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/Orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/response/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/response/RefreshCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/RefreshCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/response/ResponseMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/ResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/response/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/08e5a3f3-63f2-414a-9156-a3b2e5f6e9ba-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/08fc0027-4a4a-4dc8-8336-d3d393365a09-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/0c3fe4ec-dbac-49a3-8390-f5aa74e48965-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/11e08883-9d24-44e8-b7b4-e9e46cb8dd28-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/15dcabea-3843-4ffd-8f70-a63159cc77b7-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/1a62da3d-4d09-4059-ba5c-bf49ad814e03-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/21b504c3-7ef0-4a58-971e-f954ef528185-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/44bc3268-edec-4943-b5bb-d0065b085e80-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/4fd8dcb2-43d1-4378-81b0-2abc909cfb4e-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/736b299e-2f58-4387-90ba-3049fe9c83ce-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/77145eaa-0df7-4f43-92ab-3fee5eb24356-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/7750a3c3-ba4b-499f-9b25-3e04459c833a-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/94b276bb-0885-4fab-a818-bbac20c795c6-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/9af8a798-477d-44ec-a6e4-09c540bb81a4-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/a4dfa4af-7105-4c4b-bb8c-cf2ceedf04a8-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/da4aa49f-64fb-4f14-8de6-e0ea029ef361-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/dfc77dc5-7c24-423d-a24b-cffb476dc939-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/ChangeUserCredentialsTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/ChangeUserCredentialsTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CreateCustomerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/CreateCustomerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CreateOrderTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/CreateOrderTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/GetOrdersTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/GetOrdersTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/LogInCustomerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/LogInCustomerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-ChangeUserCredentialsTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-ChangeUserCredentialsTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CreateCustomerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CreateCustomerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CreateOrderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CreateOrderTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-GetOrdersTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-GetOrdersTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-LogInCustomerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-LogInCustomerTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,44 +99,24 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/zlatapavlova/Desktop/Diplom_2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ChangeUserCredentialsTest">
-    <configuration name="ChangeUserCredentialsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Diplom_2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ChangeUserCredentialsTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ChangeUserCredentialsTest.checkChangeCredentialsRegisteredCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Diplom_2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ChangeUserCredentialsTest" />
-      <option name="METHOD_NAME" value="checkChangeCredentialsRegisteredCustomer" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ChangeUserCredentialsTest.checkChangeCredentialsRegisteredCustomerWithExistedEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Diplom_2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ChangeUserCredentialsTest" />
-      <option name="METHOD_NAME" value="checkChangeCredentialsRegisteredCustomerWithExistedEmail" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.CreateCustomerTest.createCorrectCustomer">
     <configuration name="ChangeUserCredentialsTest.checkChangeCredentialsUnregisteredCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_2" />
       <option name="PACKAGE_NAME" value="" />
@@ -115,22 +127,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateCustomerTest.createCorrectCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diplom_2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CreateCustomerTest" />
+      <option name="METHOD_NAME" value="createCorrectCustomer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LogInCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LogInCustomerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LogInCustomerTest.logInWithIncorrectEmailReturnWrongMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LogInCustomerTest" />
+      <option name="METHOD_NAME" value="logInWithIncorrectEmailReturnWrongMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LogInCustomerTest.logInWithIncorrectPasswordReturnWrongMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LogInCustomerTest" />
+      <option name="METHOD_NAME" value="logInWithIncorrectPasswordReturnWrongMessage" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ChangeUserCredentialsTest" />
-        <item itemvalue="JUnit.ChangeUserCredentialsTest.checkChangeCredentialsRegisteredCustomer" />
-        <item itemvalue="JUnit.ChangeUserCredentialsTest.checkChangeCredentialsRegisteredCustomerWithExistedEmail" />
+        <item itemvalue="JUnit.CreateCustomerTest.createCorrectCustomer" />
         <item itemvalue="JUnit.ChangeUserCredentialsTest.checkChangeCredentialsUnregisteredCustomer" />
-        <item itemvalue="JUnit.CreateCustomerTest" />
+        <item itemvalue="JUnit.LogInCustomerTest" />
+        <item itemvalue="JUnit.LogInCustomerTest.logInWithIncorrectPasswordReturnWrongMessage" />
+        <item itemvalue="JUnit.LogInCustomerTest.logInWithIncorrectEmailReturnWrongMessage" />
       </list>
     </recent_temporary>
   </component>
@@ -143,6 +185,21 @@
       <option name="presentableId" value="Default" />
       <updated>1662537233432</updated>
     </task>
+    <task id="LOCAL-00001" summary="tests for api">
+      <created>1662924429038</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662924429038</updated>
+    </task>
+    <task id="LOCAL-00002" summary="tests for api">
+      <created>1662970248010</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662970248010</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,5 +212,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tests for api" />
+    <option name="LAST_COMMIT_MESSAGE" value="tests for api" />
   </component>
 </project>

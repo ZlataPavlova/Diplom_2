@@ -1,203 +1,73 @@
 
 import io.restassured.response.ValidatableResponse;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import io.qameta.allure.junit4.DisplayName;
-import io.qameta.allure.Step;
-import static org.apache.http.HttpStatus.*;
-import request.Customer;
+import steps.StepForChangeUserCredentialsTest;
 import response.RefreshCustomer;
-import request.CustomerClient;
-import request.CustomerCredentials;
-import request.CustomerGeneration;
-import response.ResponseMessage;
 import response.CreateCustomerResponse;
 
 public class ChangeUserCredentialsTest {
-
-    private Customer customer;
-    private Customer customerChange;
-    private Customer customerWithRepeatEmail;
-    private CustomerClient customerClient;
-    private ResponseMessage responseMessage;
-    private CreateCustomerResponse createCustomerResponse;
-    private RefreshCustomer refreshCustomer;
-    private String accessToken;
-
-    @Before
-    public void setUp() {
-        customer = CustomerGeneration.getDefault();
-        customerChange = CustomerGeneration.getNewCredentials();
-        customerWithRepeatEmail = CustomerGeneration.getRepeatCredentials();
-        customerClient = new CustomerClient();
-        responseMessage = new ResponseMessage();
-    }
-
-    @Step("Send POST request to api/auth/register")
-    public ValidatableResponse createCorrectCustomer() {
-        ValidatableResponse response = customerClient.create(customer);
-        return response;
-    }
-    @Step("Send POST request to api/auth/register for create customer with repeat email")
-    public ValidatableResponse createCustomerWithRepeatEmail() {
-        ValidatableResponse response = customerClient.create(customerWithRepeatEmail);
-        return response;
-    }
-    @Step("Send PATH request to api/auth/user")
-    public ValidatableResponse changeCredentialsRegisteredCustomer() {
-        ValidatableResponse response = customerClient.change(customerChange, accessToken);
-        return response;
-    }
-
-    @Step("Send PATH request to api/auth/user and deserialize into RefreshCustomer class")
-    public RefreshCustomer sendResponseChangeCustomerResponseClass(ValidatableResponse response){
-        RefreshCustomer refreshCustomerResponse = response.extract().body().as(RefreshCustomer.class);
-        return refreshCustomerResponse;
-    }
-
-    @Step("Send POST request to api/auth/login")
-    public ValidatableResponse logInCustomer() {
-        ValidatableResponse response = customerClient.logIn(CustomerCredentials.from(customer));
-        return response;
-    }
-
-    @Step("Send POST request to api/auth/login and deserialize into CreateCustomerResponse class")
-    public CreateCustomerResponse sendResponseInLogInCustomerResponseClass(ValidatableResponse response){
-        CreateCustomerResponse createCustomerResponse = response.extract().body().as(CreateCustomerResponse.class);
-        return createCustomerResponse;
-    }
-
-    @Step("Get created accessToken")
-    public String getAccessTokenCustomer(CreateCustomerResponse createCustomerResponse) {
-        accessToken = createCustomerResponse.getAccessToken().substring(7);
-        return accessToken;
-    }
-
-    @Step("Assert status code is 200")
-    public void compareStatusCodeTo200(ValidatableResponse response){
-        int actualStatusCode = response.extract().statusCode();
-        Assert.assertEquals(SC_OK, actualStatusCode);
-    }
-    @Step("Assert status code is 401")
-    public void compareStatusCodeTo401(ValidatableResponse response){
-        int actualStatusCode = response.extract().statusCode();
-        Assert.assertEquals(SC_UNAUTHORIZED, actualStatusCode);
-    }
-    @Step("Assert status code is 403")
-    public void compareStatusCodeTo403(ValidatableResponse response){
-        int actualStatusCode = response.extract().statusCode();
-        Assert.assertEquals(SC_FORBIDDEN, actualStatusCode);
-    }
-
-    @Step("Assert successful message")
-    public void compareMessageToSuccessfulMessage(RefreshCustomer refreshCustomerResponse, ResponseMessage responseMessage){
-        boolean actualMessage = refreshCustomerResponse.isSuccess();
-        Assert.assertEquals(responseMessage.isMessageSuccessCreateCustomer(), actualMessage);
-    }
-
-    @Step("Assert 401 error message Unauthorized")
-    public void compareMessageToError401Unauthorized(ValidatableResponse response, ResponseMessage responseMessage){
-        String actualMessage = response.extract().path("message");
-        Assert.assertEquals(responseMessage.getMessageError401Unauthorized(), actualMessage);
-    }
-
-    @Step("Assert 403 error message Forbidden")
-    public void compareMessageToError403Forbidden(ValidatableResponse response, ResponseMessage responseMessage){
-        String actualMessage = response.extract().path("message");
-        Assert.assertEquals(responseMessage.getMessageError403CustomerWithRepeatPassword(), actualMessage);
-    }
-
-    @Step("Assert unsuccessful message")
-    public void compareMessageToUnsuccessfulMessage(ValidatableResponse response, ResponseMessage responseMessage){
-        boolean actualMessage = response.extract().path("success");
-        Assert.assertEquals(responseMessage.isMessageUnsuccessfulCreateCustomer(), actualMessage);
-    }
-
-    @Step("Check String name is not empty")
-    public void checkNameIsCustomerName(RefreshCustomer refreshCustomerResponse){
-        String actualName = refreshCustomerResponse.getUser().getName();
-        Assert.assertEquals(customerChange.getName(), actualName);
-    }
-
-    @Step("Check String email is not empty")
-    public void checkEmailIsCustomerName(RefreshCustomer refreshCustomerResponse){
-        String actualEmail = refreshCustomerResponse.getUser().getEmail();
-        Assert.assertEquals(customerChange.getEmail(), actualEmail);
-    }
+    private StepForChangeUserCredentialsTest stepForChangeUserCredentialsTest = new StepForChangeUserCredentialsTest();
 
     @DisplayName("change credentials registered customer")
     @Test
     public void checkChangeCredentialsRegisteredCustomer() {
-        createCorrectCustomer();
-        ValidatableResponse loginResponse = logInCustomer();
-        CreateCustomerResponse createLogInCustomerResponse = sendResponseInLogInCustomerResponseClass(loginResponse);
-        getAccessTokenCustomer(createLogInCustomerResponse);
+        stepForChangeUserCredentialsTest.createCorrectCustomer();
+        ValidatableResponse loginResponse = stepForChangeUserCredentialsTest.logInCustomer();
+        CreateCustomerResponse createLogInCustomerResponse = stepForChangeUserCredentialsTest.sendResponseInLogInCustomerResponseClass(loginResponse);
+        stepForChangeUserCredentialsTest.getAccessTokenCustomer(createLogInCustomerResponse);
 
+        ValidatableResponse response = stepForChangeUserCredentialsTest.changeCredentialsRegisteredCustomer();
+        RefreshCustomer refreshCustomerResponse = stepForChangeUserCredentialsTest.sendResponseChangeCustomerResponseClass(response);
 
-        ValidatableResponse response = changeCredentialsRegisteredCustomer();
-        RefreshCustomer refreshCustomerResponse = sendResponseChangeCustomerResponseClass(response);
-
-        compareStatusCodeTo200(response);
-        compareMessageToSuccessfulMessage(refreshCustomerResponse, responseMessage);
-        checkNameIsCustomerName(refreshCustomerResponse);
-        checkEmailIsCustomerName(refreshCustomerResponse);
-        customerClient.delete(accessToken);
-
+        stepForChangeUserCredentialsTest.compareStatusCodeTo200(response);
+        stepForChangeUserCredentialsTest.compareMessageToSuccessfulMessage(refreshCustomerResponse);
+        stepForChangeUserCredentialsTest.checkNameIsCustomerName(refreshCustomerResponse);
+        stepForChangeUserCredentialsTest.checkEmailIsCustomerName(refreshCustomerResponse);
+        stepForChangeUserCredentialsTest.deleteCustomer();
     }
 
     @DisplayName("change credentials unregistered customer")
     @Test
     public void checkChangeCredentialsUnregisteredCustomer() {
-        ValidatableResponse customerResponse = createCorrectCustomer();
-        CreateCustomerResponse createCustomerResponse = sendResponseInLogInCustomerResponseClass(customerResponse);
+        ValidatableResponse customerResponse = stepForChangeUserCredentialsTest.createCorrectCustomer();
+        CreateCustomerResponse createCustomerResponse = stepForChangeUserCredentialsTest.sendResponseInLogInCustomerResponseClass(customerResponse);
 
-        accessToken = "";
-        ValidatableResponse response = changeCredentialsRegisteredCustomer();
+        ValidatableResponse response = stepForChangeUserCredentialsTest.changeCredentialsRegisteredCustomer();
 
-        compareStatusCodeTo401(response);
-        compareMessageToError401Unauthorized( response,  responseMessage);
-        compareMessageToUnsuccessfulMessage(response, responseMessage);
+        stepForChangeUserCredentialsTest.compareStatusCodeTo401(response);
+        stepForChangeUserCredentialsTest.compareMessageToError401Unauthorized(response);
+        stepForChangeUserCredentialsTest.compareMessageToUnsuccessfulMessage(response);
 
-        getAccessTokenCustomer(createCustomerResponse);
-        customerClient.delete(accessToken);
-
+        stepForChangeUserCredentialsTest.getAccessTokenCustomer(createCustomerResponse);
+        stepForChangeUserCredentialsTest.deleteCustomer();
     }
 
     @DisplayName("change credentials registered customer with existed email")
     @Test
     public void checkChangeCredentialsRegisteredCustomerWithExistedEmail() {
         //создали пользователя данные которого будем менять
-        ValidatableResponse customerResponse = createCorrectCustomer();
-        CreateCustomerResponse createCustomerResponse = sendResponseInLogInCustomerResponseClass(customerResponse);
-
+        ValidatableResponse customerResponse = stepForChangeUserCredentialsTest.createCorrectCustomer();
+        CreateCustomerResponse createCustomerResponse = stepForChangeUserCredentialsTest.sendResponseInLogInCustomerResponseClass(customerResponse);
         //создали пользователя с которым совпадет email
-        ValidatableResponse customerResponseWithRepeatEmail = createCustomerWithRepeatEmail();
-        CreateCustomerResponse createCustomerWithRepeatEmail = sendResponseInLogInCustomerResponseClass(customerResponseWithRepeatEmail);
-
+        ValidatableResponse customerResponseWithRepeatEmail = stepForChangeUserCredentialsTest.createCustomerWithRepeatEmail();
+        CreateCustomerResponse createCustomerWithRepeatEmail = stepForChangeUserCredentialsTest.sendResponseInLogInCustomerResponseClass(customerResponseWithRepeatEmail);
         //авторизовываемся под пользователем, которому будем менять данные
-        ValidatableResponse loginResponse = logInCustomer();
-        CreateCustomerResponse createLogInCustomerResponse = sendResponseInLogInCustomerResponseClass(loginResponse);
-        getAccessTokenCustomer(createLogInCustomerResponse);
-
-
+        ValidatableResponse loginResponse = stepForChangeUserCredentialsTest.logInCustomer();
+        CreateCustomerResponse createLogInCustomerResponse = stepForChangeUserCredentialsTest.sendResponseInLogInCustomerResponseClass(loginResponse);
+        stepForChangeUserCredentialsTest.getAccessTokenCustomer(createLogInCustomerResponse);
         //изменяем данные, где почта будет совпадать с уже созданным чуваком
-        ValidatableResponse response = changeCredentialsRegisteredCustomer();
-
-
+        ValidatableResponse response = stepForChangeUserCredentialsTest.changeCredentialsRegisteredCustomer();
         //проверки ответа
-        compareStatusCodeTo403(response);
-        compareMessageToUnsuccessfulMessage(response, responseMessage);
-        compareMessageToError403Forbidden(response,responseMessage);
-
+        stepForChangeUserCredentialsTest.compareStatusCodeTo403(response);
+        stepForChangeUserCredentialsTest.compareMessageToUnsuccessfulMessage(response);
+        stepForChangeUserCredentialsTest.compareMessageToError403Forbidden(response);
         //удалить двух созданных тестовых пользователей
-
-        customerClient.delete(accessToken);
-        getAccessTokenCustomer(createCustomerResponse);
-        customerClient.delete(accessToken);
-        getAccessTokenCustomer(createCustomerWithRepeatEmail);
-        customerClient.delete(accessToken);
+        stepForChangeUserCredentialsTest.deleteCustomer();
+        stepForChangeUserCredentialsTest.getAccessTokenCustomer(createCustomerResponse);
+        stepForChangeUserCredentialsTest.deleteCustomer();
+        stepForChangeUserCredentialsTest.getAccessTokenCustomer(createCustomerWithRepeatEmail);
+        stepForChangeUserCredentialsTest.deleteCustomer();
 
     }
 

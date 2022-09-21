@@ -1,7 +1,5 @@
 package response;
 
-import request.IngredientsRequest;
-
 import java.util.List;
 
 public class Order {

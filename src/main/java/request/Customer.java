@@ -16,10 +16,11 @@ public class Customer {
     }
 
     public String getwrongPassword() {
-        return password+"2";
+        return password + "2";
     }
+
     public String getwrongEmail() {
-        return email+"2";
+        return email + "2";
     }
 
     public void setEmail(String email) {

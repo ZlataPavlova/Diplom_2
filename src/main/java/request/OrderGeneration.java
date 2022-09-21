@@ -3,9 +3,8 @@ package request;
 import java.util.ArrayList;
 
 public class OrderGeneration {
-
     public static IngredientsRequest getDefault() {
-         ArrayList<String> ingredients = new ArrayList<>();
+        ArrayList<String> ingredients = new ArrayList<>();
         ingredients.add("61c0c5a71d1f82001bdaaa70");
         ingredients.add("61c0c5a71d1f82001bdaaa74");
         ingredients.add("61c0c5a71d1f82001bdaaa6d");
@@ -23,5 +22,4 @@ public class OrderGeneration {
         ingredients.add("0000000000000000000");
         return new IngredientsRequest(ingredients);
     }
-
 }

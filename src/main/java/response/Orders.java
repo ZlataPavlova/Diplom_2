@@ -64,10 +64,11 @@ public class Orders {
     public void setNumber(int number) {
         this.number = number;
     }
+
     @Override
     public String toString() {
         return String.format("Заказы: id заказа - %s, ингредиенты - %s, статус - %s, название бургера - %s, время создания заказа - %s, время изменения заказа - %s, номер заказа - %s, ",
-                        this._id, this.ingredients, this.status,
+                this._id, this.ingredients, this.status,
                 this.name, this.createdAt, this.updatedAt, this.number);
     }
 

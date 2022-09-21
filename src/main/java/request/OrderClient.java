@@ -1,18 +1,16 @@
 package request;
 
-
+import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 
 import static io.restassured.RestAssured.given;
 
-
 public class OrderClient extends RestClient {
-    private static final String ORDER_POST  = "api/orders";
+    private static final String ORDER_POST = "api/orders";
     private static final String ORDER_GET = "api/orders";
 
-
-
-    public ValidatableResponse create (IngredientsRequest ingredientsRequest, String accessToken) {
+    @Step("Create order")
+    public ValidatableResponse create(IngredientsRequest ingredientsRequest, String accessToken) {
         return given()
                 .spec(getBaseSpec())
                 .auth().oauth2(accessToken)
@@ -22,8 +20,9 @@ public class OrderClient extends RestClient {
                 .then();
     }
 
-    public ValidatableResponse getListOrders (String accessToken) {
-        return  given()
+    @Step("Get list orders")
+    public ValidatableResponse getListOrders(String accessToken) {
+        return given()
                 .spec(getBaseSpec())
                 .auth().oauth2(accessToken)
                 .when()
